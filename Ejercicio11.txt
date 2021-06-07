@@ -1,0 +1,42 @@
+Proceso
+	var contimpar <- 0
+	var totalpares <- 0
+	var contpar <- 0
+	var docena2 <- 0
+	var numgrande <- 0
+	var i <- 0
+	var prompar
+	Hacer
+		var numero
+		var impar
+		Escribir "Ingrese un numero"
+		Leer numero
+		Si numero >=0 & numero <= 36
+			i = i + 1
+			Si numero >= numgrande
+				numgrande <- numero
+			FinSi
+			Si numero > 12 & numero < 25
+				decena2 = docena2 +1
+			FinSi
+			impar <- MOD(numero,2)
+			Si impar = 0
+				Si numero != 0
+					contpar = contpar + 1
+					totalpares = totalpares + numero
+				FinSi
+			Sino
+				contimpar <- contimpar + 1
+			FinSi
+		Sino
+			Escribir "El numero no pertenece a la ruleta"
+		FinSi
+		
+	Mientras i < 10
+	prompar <- totalpares/contpar
+	Escribir "Ingresaste " + contimpar + " numeros impares"
+	Escribir "El promedio de numeros pares que ingresaste es de " + prompar
+	Escribir "Ingresaste " + docena2 + " numeros de la segunda docena"
+	Escribir "El numero ingresado mas grande es " + numgrande
+	
+FinProceso
